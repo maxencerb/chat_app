@@ -1,4 +1,8 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -38,9 +42,9 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) { */
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -71,7 +75,7 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+/* } */
 
 * {
   box-sizing: border-box;
@@ -82,7 +86,8 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color-scheme: dark;
 }
 
 body {
@@ -100,8 +105,38 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+.button-style {
+  --colors-plumA3: hsl(300 99.4% 67.1% / 0.102);
+  --colors-orangeA8:  hsl(24 100% 49.9% / 0.523);
+  --colors-pinkA8: hsl(322 99.7% 55.4% / 0.608);
+  --colors-violetA8: hsl(250 99.7% 66.1% / 0.733); 
+  ---backlight: 0 0 0 2px var(--colors-plumA3), -15px 0 30px -15px var(--colors-orangeA8), 0 0 30px -15px var(--colors-pinkA8), 15px 0 30px -15px var(--colors-violetA8);
+  box-shadow: var(---backlight);
+}
+
+.custom-height {
+  height: calc(100vh - 68px);
+}
+
+.text-gradient {
+  --start-color: #7928CA;
+  --end-color: #FF0080;
+  background-image: linear-gradient(90deg,var(--start-color),var(--end-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(125deg, rgb(41, 0, 53) 8%, rgba(0,0,0,1) 48%, rgba(39,7,99,1) 89%);
+}
+
+.homepage {
+  background: linear-gradient(125deg, rgb(41, 0, 53) 8%, rgba(0,0,0,1) 48%, rgba(39,7,99,1) 89%);
+}
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
