@@ -19,7 +19,7 @@ enum MessageStatus {
 }
 
 type Message = {
-    sender: User,
+    sender: string, // user id
     utc_timestamp: number,
     content: MessageContent,
     status: MessageStatus,

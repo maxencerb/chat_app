@@ -6,15 +6,20 @@ enum ConvType  {
     Multi="multi"
 }
 
-type Conv = {
-    members: [],
+type ConvHeader = {
+    members: string[],
     id: string,
     created: number,
+    type: ConvType,
+    name?: string
+}
+
+type Conv = ConvHeader & {
     messages: Message[],
-    type: ConvType
 }
 
 export {
     ConvType,
-    type Conv
+    type Conv,
+    type ConvHeader,
 }
